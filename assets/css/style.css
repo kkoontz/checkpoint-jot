@@ -138,6 +138,16 @@ body {
   align-self: flex-start;
 }
 
+.jot-form-error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #f87171;
+}
+
+.jot-form-error[hidden] {
+  display: none;
+}
+
 .btn-danger {
   background: #e94560;
   color: #fff;
