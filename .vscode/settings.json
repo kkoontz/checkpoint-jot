@@ -1,0 +1,30 @@
+{
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#141d2b",
+    "statusBar.background": "#141d2b",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#24344e",
+    "statusBarItem.remoteBackground": "#141d2b",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#141d2b",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#141d2b99",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "editorGroup.border": "#141d2b",
+    "sideBar.border": "#141d2b",
+    "statusBar.debuggingBackground": "#2b2214",
+    "statusBar.debuggingForeground": "#e7e7e7",
+    "tab.activeBorder": "#141d2b"
+  },
+  "peacock.color": "#141d2b",
+}
