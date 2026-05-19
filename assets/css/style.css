@@ -1,0 +1,311 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #1a1a2e;
+  color: #e8e8f0;
+}
+
+.jot-app {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.jot-sidebar {
+  background: #16213e;
+  border-right: 1px solid #0f3460;
+  padding: 1.25rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.jot-sidebar-header {
+  padding: 0 0.25rem;
+}
+
+.jot-brand {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.jot-count {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #a0aec0;
+}
+
+.jot-create-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.jot-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.jot-colors {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  cursor: pointer;
+}
+
+.color-swatch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.color-swatch::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--swatch);
+  border: 2px solid transparent;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.color-swatch:has(input:checked)::before {
+  border-color: #fff;
+  transform: scale(1.08);
+}
+
+.jot-title-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f1f5f9;
+  font-size: 1rem;
+}
+
+.jot-title-input:focus {
+  outline: 2px solid #20b2aa;
+  outline-offset: 1px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: #20b2aa;
+  color: #0f172a;
+}
+
+.btn-create {
+  align-self: flex-start;
+}
+
+.btn-danger {
+  background: #e94560;
+  color: #fff;
+}
+
+/* List */
+.jots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.jot-list-empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  padding: 0.5rem;
+}
+
+.jot-card {
+  display: flex;
+  gap: 0;
+  background: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.jot-card:hover {
+  background: #243044;
+}
+
+.jot-card.is-active {
+  border-color: #20b2aa;
+  background: #243044;
+}
+
+.jot-card-accent {
+  width: 6px;
+  flex-shrink: 0;
+}
+
+.jot-card-body {
+  padding: 0.65rem 0.75rem;
+  min-width: 0;
+}
+
+.jot-card-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.jot-card-date {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.15rem;
+}
+
+.jot-card-preview {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Workspace */
+.jot-workspace {
+  padding: 1.5rem 2rem 2rem;
+  background: #1a1a2e;
+  overflow-y: auto;
+}
+
+.jot-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.jot-detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.jot-detail-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.jot-detail-meta {
+  flex: 1;
+  min-width: 200px;
+}
+
+.jot-detail-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.jot-detail-dates {
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.jot-detail-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.jot-editor-wrap {
+  position: relative;
+  background: #0f172a;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  padding: 1rem 1rem 2.5rem;
+}
+
+.jot-editor {
+  width: 100%;
+  min-height: 420px;
+  resize: vertical;
+  border: none;
+  background: transparent;
+  color: #f1f5f9;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+.jot-editor:focus {
+  outline: none;
+}
+
+.jot-word-count {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1rem;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .jot-app {
+    grid-template-columns: 1fr;
+  }
+
+  .jot-sidebar {
+    max-height: 45vh;
+  }
+}
