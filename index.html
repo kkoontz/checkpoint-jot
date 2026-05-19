@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Jot</title>
+</head>
+
+<body>
+  <div id="app" class="jot-app">
+    <aside class="jot-sidebar">
+      <header class="jot-sidebar-header">
+        <h1 class="jot-brand">Jot...</h1>
+        <p id="jot-count" class="jot-count">0 Jots</p>
+      </header>
+
+      <section class="jot-create">
+        <h2 class="jot-create-label">Add a Jot</h2>
+        <form id="create-jot-form" class="jot-create-form">
+          <fieldset class="jot-colors" aria-label="Jot color">
+            <label class="color-swatch" style="--swatch: #4ade80">
+              <input type="radio" name="color" value="#4ade80" checked required>
+            </label>
+            <label class="color-swatch" style="--swatch: #20b2aa">
+              <input type="radio" name="color" value="#20b2aa">
+            </label>
+            <label class="color-swatch" style="--swatch: #8f7de8">
+              <input type="radio" name="color" value="#8f7de8">
+            </label>
+            <label class="color-swatch" style="--swatch: #fb923c">
+              <input type="radio" name="color" value="#fb923c">
+            </label>
+            <label class="color-swatch" style="--swatch: #f472b6">
+              <input type="radio" name="color" value="#f472b6">
+            </label>
+            <label class="color-swatch" style="--swatch: #60a5fa">
+              <input type="radio" name="color" value="#60a5fa">
+            </label>
+          </fieldset>
+          <input type="text" name="title" class="jot-title-input" placeholder="Title" minlength="3" maxlength="15"
+            required>
+          <button type="submit" class="btn btn-primary btn-create">Create +</button>
+        </form>
+      </section>
+
+      <div id="jots-list" class="jots-list" role="list"></div>
+    </aside>
+
+    <main id="jot-workspace" class="jot-workspace"></main>
+  </div>
+
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>
