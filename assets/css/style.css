@@ -46,6 +46,18 @@ body {
   color: #a0aec0;
 }
 
+.jot-alt-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #20b2aa;
+  text-decoration: none;
+}
+
+.jot-alt-link:hover {
+  text-decoration: underline;
+}
+
 .jot-create-label {
   margin: 0 0 0.75rem;
   font-size: 0.85rem;

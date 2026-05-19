@@ -25,6 +25,14 @@ bcw-serve
 
 Then open **http://127.0.0.1:8080** (or the URL printed in the terminal).
 
+**Inkwell edition** (alternate UI, same features):
+
+```powershell
+npm run start:inkwell
+```
+
+Open **http://127.0.0.1:8081** — uses separate `localStorage` (`inkwell_jots`).
+
 **Common mistake:** `http-server.` with a dot after the package name causes a 404. The `.` is the folder to serve and must be **separate**: `http-server .`
 
 ## Architecture

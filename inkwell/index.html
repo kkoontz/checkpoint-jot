@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkwell — Jot Studio Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/inkwell.css">
+</head>
+
+<body>
+  <div class="ink-app">
+    <header class="ink-header">
+      <div class="ink-brand">
+        <span class="ink-logo" aria-hidden="true">✒</span>
+        <div>
+          <h1 class="ink-title">Inkwell</h1>
+          <p class="ink-tagline">Notes that stay with you</p>
+        </div>
+      </div>
+      <p id="jot-count" class="ink-stat" aria-live="polite">0 Jots</p>
+      <a class="ink-classic-link" href="http://127.0.0.1:8080/index.html" title="Open classic Jot UI">Classic view ↗</a>
+    </header>
+
+    <div class="ink-body">
+      <aside class="ink-rail">
+        <section class="ink-compose" aria-labelledby="compose-heading">
+          <h2 id="compose-heading" class="ink-section-label">New jot</h2>
+          <form id="create-jot-form" class="ink-form">
+            <fieldset id="jot-color-picker" class="ink-colors" aria-label="Accent color"></fieldset>
+            <label class="ink-field">
+              <span class="ink-field-label">Title</span>
+              <input type="text" name="title" placeholder="3–15 characters" minlength="3" maxlength="15" required autocomplete="off">
+            </label>
+            <p id="create-jot-error" class="ink-form-error" hidden role="alert"></p>
+            <button type="submit" class="ink-btn ink-btn--primary">Add jot</button>
+          </form>
+        </section>
+
+        <section class="ink-library" aria-labelledby="library-heading">
+          <h2 id="library-heading" class="ink-section-label">Your library</h2>
+          <div id="jots-list" class="ink-list" role="list"></div>
+        </section>
+      </aside>
+
+      <main id="jot-workspace" class="ink-stage" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>

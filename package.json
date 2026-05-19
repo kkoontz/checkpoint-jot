@@ -5,7 +5,8 @@
   "description": "CodeWorks Jot checkpoint — MVC note app",
   "scripts": {
     "start": "http-server . -p 8080 -c-1",
-    "serve": "http-server . -p 8080 -c-1"
+    "serve": "http-server . -p 8080 -c-1",
+    "start:inkwell": "http-server inkwell -p 8081 -c-1"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
