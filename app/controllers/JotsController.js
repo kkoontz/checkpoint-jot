@@ -94,7 +94,7 @@ export class JotsController {
     const listEl = document.getElementById('jots-list')
     if (!countEl || !listEl) return
 
-    const n = AppState.jots.length
+    const n = (AppState.jots ?? []).length
     countEl.textContent = `${n} Jot${n === 1 ? '' : 's'}`
 
     if (!n) {
@@ -102,7 +102,7 @@ export class JotsController {
       return
     }
 
-    listEl.innerHTML = AppState.jots.map(jot => {
+    listEl.innerHTML = (AppState.jots ?? []).map(jot => {
       const active = AppState.activeJot?.id === jot.id
       const preview = (jot.body || '').trim().slice(0, 60)
       return `

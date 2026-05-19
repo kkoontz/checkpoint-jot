@@ -4,7 +4,8 @@ import { loadState, saveState } from '../utils/Store.js'
 
 class JotsService {
   loadJots() {
-    const jots = loadState('jots', Jot) || []
+    const loaded = loadState('jots', Jot)
+    const jots = Array.isArray(loaded) ? loaded : []
     AppState.jots = jots
     AppState.activeJot = jots.length ? jots[0] : null
   }
@@ -15,7 +16,7 @@ class JotsService {
       return false
     }
     const jot = new Jot({ title: trimmed, color })
-    AppState.jots = [...AppState.jots, jot]
+    AppState.jots = [...(AppState.jots ?? []), jot]
     AppState.activeJot = jot
     this.saveJots()
     return true
@@ -41,7 +42,7 @@ class JotsService {
 
   deleteJot(id) {
     const wasActive = AppState.activeJot?.id === id
-    AppState.jots = AppState.jots.filter(j => j.id !== id)
+    AppState.jots = (AppState.jots ?? []).filter(j => j.id !== id)
     if (wasActive) {
       AppState.activeJot = AppState.jots[0] || null
     }
